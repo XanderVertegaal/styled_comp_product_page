@@ -23,7 +23,11 @@ const PictDict: {
     4: Product4,
 }
 
-export const Body = () => {
+type BodyProps = {
+    updateQuantity: (value: number) => void;
+}
+
+export const Body = ({updateQuantity}: BodyProps) => {
 
     const [selected, setSelected] = useState<number>(1);
     const [counter, setCounter] = useState<number>(1);
@@ -103,7 +107,7 @@ export const Body = () => {
                         <IncrementSVG src={IconPlus}/>
                     </Increment>
                 </Quantity>
-                <AddToCart>
+                <AddToCart onClick={() => updateQuantity(counter)}>
                     <ShoppingCart src={IconShoppingCart}/>
                     Add to cart
                 </AddToCart>

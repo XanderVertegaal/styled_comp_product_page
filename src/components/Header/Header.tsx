@@ -6,7 +6,12 @@ import MenuOpen from '../../images/icon-menu.svg'
 import { useState } from 'react';
 import avatar from "../../images/image-avatar.png";
 
-export const Header = () => {
+type HeaderProps = {
+    updateQuantity: (value: number) => void;
+    quantity: number;
+}
+
+export const Header = ({updateQuantity, quantity}: HeaderProps) => {
 
     const [openMenu, setOpenMenu] = useState<boolean>(false);
     const [openCart, setOpenCart] = useState<boolean>(false);
@@ -25,9 +30,9 @@ export const Header = () => {
                 <NavItem>Contact</NavItem>
             </NavMenu>
             <Overlay show={openMenu}/>
-            <ShoppingCartWrapper>
-                <ShoppingCart src={shoppingCart} $opencart={openCart} onClick={() => setOpenCart(!openCart)}/>
-                <ShoppingCartQuantity>2</ShoppingCartQuantity>
+            <ShoppingCartWrapper onClick={() => setOpenCart(!openCart)}>
+                <ShoppingCart src={shoppingCart} $opencart={openCart} />
+                <ShoppingCartQuantity>{quantity}</ShoppingCartQuantity>
             </ShoppingCartWrapper>
             <ShoppingCartCard openCart={openCart}>
                 <CardHeader>Cart</CardHeader>
