@@ -12,7 +12,6 @@ export const Nav = styled.nav`
  
 
     @media screen and (min-width: 400px) {
-        /* padding: 1.5rem 0; */
         width: 80%;
         margin: 0 auto;
 
@@ -80,7 +79,7 @@ export const NavItem = styled.li`
         margin: 0 0 0 3.5rem;
         color: ${props => props.theme.colors.grayishBlue};
         border-bottom: ${props => props.theme.colors.white} 2px solid;
-        padding: 1.5rem 0;
+        padding: 2rem 0;
     }
 `
 
@@ -103,13 +102,14 @@ export const Overlay = styled.div<OverlayProps>`
         transition: opacity .5s ease;` : null)};
 `
 
-export const ShoppingCart = styled(SVG)`
- margin-left: auto;
-    
-    & path{
-        fill: ${props => props.theme.colors.darkGrayishBlue};
-    }
+type ShoppingCartProps = {
+    $opencart: boolean;
+}
 
+export const ShoppingCartWrapper = styled.div`
+    position: relative;
+    margin-left: auto;
+    
     &:hover {
         cursor: pointer;
     }
@@ -117,6 +117,27 @@ export const ShoppingCart = styled(SVG)`
     @media screen and (min-width: 400px) {
         margin-right: 3rem;
     };
+
+`
+
+export const ShoppingCart = styled(SVG)<ShoppingCartProps>`
+    & path {
+        fill: ${({$opencart, theme}) => ($opencart === true ? theme.colors.veryDarkBlue : theme.colors.darkGrayishBlue)};
+    }
+
+`
+
+export const ShoppingCartQuantity = styled.p`
+    position: absolute;
+    top: -5px;
+    right: -7.5px;
+    color: ${props => props.theme.colors.white};
+    background: ${props => props.theme.colors.orange};
+    font-size: 10px;
+    font-weight: bold;
+    border-radius: 40%;
+    padding: 0 .75em;
+
 `
 
 export const AvatarImg = styled.img`
@@ -157,7 +178,12 @@ export const ShoppingCartCard = styled.div<ShoppingCartCardProps>`
     box-shadow: 0 5px 5px 0px grey;
     
     @media screen and (min-width: 400px) {
-        display: none;
+        width: 20vw;
+        // top: 10%;
+        left: 70%;
+        z-index: 2;
+        margin: 0;
+        height: auto;
     }
 `
 
@@ -170,4 +196,8 @@ export const CardContents = styled.p`
     font-weight: bold;
     color: ${props => props.theme.colors.darkGrayishBlue};
     padding-top: 2rem;
+
+    @media screen and (min-width: 400px) {
+        padding: 3em 0;
+    }
 `

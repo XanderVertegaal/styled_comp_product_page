@@ -7,9 +7,11 @@ export const ShopItem = styled.article`
 
     @media screen and (min-width: 400px) {
         flex-direction: row;
+        gap: 5em;
         margin: 5em auto;
         max-width: 70vw;
         justify-content: space-between;
+        align-items: center;
     }
 `
 
@@ -20,7 +22,7 @@ export const Picture = styled.section`
         display: flex;
         flex-direction: column;
         margin-right: 2em;
-        width: 70%;
+        width: 150%;
     }
 `
 
@@ -28,7 +30,7 @@ export const MainPicture = styled.img`
     width: 100%;
 
     @media screen and (min-width: 400px) {
-        border-radius: 10%
+        border-radius: 5%
     }
 `
 
@@ -140,6 +142,10 @@ export const Text = styled.section`
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+
+    @media screen and (min-width: 400px) {
+        height: 70%;
+    }
 `
 
 export const LeadTitle = styled.h3`
@@ -148,11 +154,21 @@ export const LeadTitle = styled.h3`
     color: ${props => props.theme.colors.orange};
     letter-spacing: .05em;
     font-size: smaller;
+
+    @media screen and (min-width: 400px) {
+        font-size: 16px;
+        letter-spacing: 0;
+    }
 `
 export const MainTitle = styled.h2`
     grid-area: 2 / 1 / 3 / 4;
     font-size: 28px;
     color: ${props => props.theme.colors.veryDarkBlue};
+
+    @media screen and (min-width: 400px) {
+        font-size: 52px;
+        letter-spacing: -.025em;
+    }
 `
 
 export const Description = styled.p`
@@ -161,13 +177,22 @@ export const Description = styled.p`
     line-height: 1.5em;
     font-size: 15px;
     padding: 1.25em 0;
+
+    @media screen and (min-width: 400px) {
+        font-size: 16px;
+    }
 `
 export const NewPrice = styled.p`
     grid-area: 4 / 1 / 5 / 2;
-    font-size: 24px;
+    font-size: 28px;
     font-weight: bold;
     align-self: center;
     color: ${props => props.theme.colors.veryDarkBlue};
+    user-select: none;
+
+    @media screen and (min-width: 400px) {
+        justify-self: start;
+    }
 `
 export const Discount = styled.p`
     grid-area: 4 / 2 / 5 / 3;   
@@ -180,6 +205,14 @@ export const Discount = styled.p`
     font-size: 14px;
     font-weight: bold;
     border-radius: 5px;
+    user-select: none;
+
+    @media screen and (min-width: 400px) {
+        grid-area: 4 / 2 / 5 / 4;
+        font-size: 18px;
+        padding: 5px 8px;
+        margin: 0;
+    }
 `
 export const OldPrice = styled.p`
     grid-area: 4 / 3 / 5 / 4;
@@ -188,15 +221,31 @@ export const OldPrice = styled.p`
     color: ${props => props.theme.colors.grayishBlue};
     font-weight: bold;
     justify-self: end;
+    user-select: none;
+
+    @media screen and (min-width: 400px) {
+        grid-area: 5 / 1 / 6 / 4;
+        justify-self: start;
+        padding: .75em 0 1.25em 0;
+    }
 `
 export const Controls = styled.section`
     grid-area: 5 / 1 / 6 / 4;
+
+    @media screen and (min-width: 400px) {
+        grid-area: 6 / 1 / 7 / 4;
+        display: flex;
+        align-items: center;
+    }
 `
 export const Quantity = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: stretch;
     margin: 1em 0;
+
+    @media screen and (min-width: 400px) {
+    }
 `
 
 export const Decrement = styled.div`
@@ -206,22 +255,61 @@ export const Decrement = styled.div`
     display: flex;
     padding: .8em 1em;
     align-items: center;
+
+    &:hover {
+        cursor: pointer;
+        & svg {
+            path {
+                fill: hsl(26, 100%, 70%);
+            }
+        }
+    }
+
+    &:active {
+        transform: translateY(2px);
+    }
+
+    @media screen and (min-width: 400px) {
+        padding: 1em 1.4em;
+    }
 `
 export const DecrementSVG = styled(SVG)``
 
 export const Counter = styled.p`
     background: ${props => props.theme.colors.lightGrayishBlue};
-    width: 100%;
+    width: 50px;
     text-align: center;
     font-weight: bold;
     color: ${props => props.theme.colors.veryDarkBlue};
     padding: .8em 1em;
+    user-select: none;
+
+    @media screen and (min-width: 400px) {
+        padding: 1em 1.4em;
+    }
 `
 export const Increment = styled.div`
     background: ${props => props.theme.colors.lightGrayishBlue};
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
     padding: .8em 1em;
+
+    &:hover {
+        cursor: pointer;
+        & svg {
+            path {
+                fill: hsl(26, 100%, 70%);
+            }
+        }
+    }
+
+    &:active {
+        transform: translateY(2px);
+    }
+
+    @media screen and (min-width: 400px) {
+        padding: 1em 1.4em;
+    }
 `
 export const IncrementSVG = styled(SVG)``
 
@@ -233,19 +321,34 @@ export const AddToCart = styled.button`
     width: 100%;
     padding: 1em 0;
     margin-bottom: 2em;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
     display: flex;
     justify-content: center;
     align-items: center;
     box-shadow: 0 1px 10px -1px ${props => props.theme.colors.orange};
     letter-spacing: 0.05em;
+    user-select: none;
+
+    &:hover {
+        cursor: pointer;
+        background: hsl(26, 100%, 70%);
+    }
+
+    &:active {
+        transform: translateY(2px);
+    }
+
+    @media screen and (min-width: 400px) {
+        margin-left: 1em;
+        margin-bottom: 0;
+    }
 `
 
 export const ShoppingCart = styled(SVG)`
     margin-right: .8em;
+    transform: scale(.75);
     & path {
         fill: ${props => props.theme.colors.white};
     }
-    transform: scale(.75)
 `

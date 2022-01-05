@@ -12,7 +12,7 @@ import Product1ThumbNail from '../../images/image-product-1-thumbnail.jpg'
 import Product2ThumbNail from '../../images/image-product-2-thumbnail.jpg'
 import Product3ThumbNail from '../../images/image-product-3-thumbnail.jpg'
 import Product4ThumbNail from '../../images/image-product-4-thumbnail.jpg'
-import { MouseEvent, useState } from "react";
+import { useState } from "react";
 
 const PictDict: {
     [index: number]: string;

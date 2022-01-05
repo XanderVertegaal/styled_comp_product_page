@@ -1,6 +1,6 @@
 import { ReactComponent as Logo } from '../../images/logo.svg'
 import shoppingCart from '../../images/icon-cart.svg'
-import { Nav, NavMenu, NavItem, Overlay, AvatarImg, MenuIcon, MenuIconWrapper, ShoppingCart, ShoppingCartCard, CardHeader, CardContents } from './Header.styles'
+import { Nav, NavMenu, NavItem, Overlay, AvatarImg, MenuIcon, MenuIconWrapper, ShoppingCartWrapper, ShoppingCart, ShoppingCartQuantity, ShoppingCartCard, CardHeader, CardContents } from './Header.styles'
 import MenuClose from '../../images/icon-close.svg'
 import MenuOpen from '../../images/icon-menu.svg'
 import { useState } from 'react';
@@ -25,7 +25,10 @@ export const Header = () => {
                 <NavItem>Contact</NavItem>
             </NavMenu>
             <Overlay show={openMenu}/>
-            <ShoppingCart src={shoppingCart} onClick={() => setOpenCart(!openCart)}/>
+            <ShoppingCartWrapper>
+                <ShoppingCart src={shoppingCart} $opencart={openCart} onClick={() => setOpenCart(!openCart)}/>
+                <ShoppingCartQuantity>2</ShoppingCartQuantity>
+            </ShoppingCartWrapper>
             <ShoppingCartCard openCart={openCart}>
                 <CardHeader>Cart</CardHeader>
                 <CardContents>Your cart is empty.</CardContents>
