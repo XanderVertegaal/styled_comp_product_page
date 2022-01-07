@@ -13,15 +13,18 @@ const App = () => {
     setOpenMenu(!value)
   }
 
-
   const updateQuantity = (value: number) => {
     setQuantity(value)
+  }
+
+  const resetQuantity = () => {
+    setQuantity(0)
   }
 
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle openMenu={openMenu}/>
-      <Header openMenu={openMenu} handleOpenMenu={handleOpenMenu} updateQuantity={updateQuantity} quantity={quantity}/>
+      <Header openMenu={openMenu} handleOpenMenu={handleOpenMenu} resetQuantity={resetQuantity} quantity={quantity}/>
       <Body updateQuantity={updateQuantity} />
     </ThemeProvider>
   );

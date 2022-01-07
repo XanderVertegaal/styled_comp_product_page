@@ -46,10 +46,13 @@ export const ButtonContainerLeft = styled.div`
     justify-content: center;
     align-items: center;
 
+    &:active {
+        transform: translateY(2px);
+    }
+
     @media screen and (min-width: 400px) {
         display: none;
     }
-
 `
 
 export const ButtonContainerRight = styled.div`
@@ -64,6 +67,10 @@ export const ButtonContainerRight = styled.div`
     justify-content: center;
     align-items: center;
 
+    &:active {
+        transform: translateY(2px);
+    }
+
     @media screen and (min-width: 400px) {
         display: none;
     }
@@ -72,11 +79,11 @@ export const ButtonContainerRight = styled.div`
 
 export const ButtonLeft = styled(SVG)`
     transform: scale(.8);
+
     & path {
         stroke-width: 5px;
     }
-    }
-
+    
 `
 export const ButtonRight = styled(SVG)`
     transform: scale(.8);
@@ -138,12 +145,13 @@ export const ThumbnailOverlay = styled.div<ThumbnailOverlayProps>`
 `
 
 export const Text = styled.section`
-    width: 90vw;
+    width: 85vw;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 
     @media screen and (min-width: 400px) {
+        width: 90vw;
         height: 70%;
     }
 `
@@ -206,6 +214,7 @@ export const Discount = styled.p`
     font-weight: bold;
     border-radius: 5px;
     user-select: none;
+    margin-left: .5em;
 
     @media screen and (min-width: 400px) {
         grid-area: 4 / 2 / 5 / 4;
@@ -243,9 +252,6 @@ export const Quantity = styled.div`
     justify-content: space-between;
     align-items: stretch;
     margin: 1em 0;
-
-    @media screen and (min-width: 400px) {
-    }
 `
 
 export const Decrement = styled.div`
@@ -277,15 +283,16 @@ export const DecrementSVG = styled(SVG)``
 
 export const Counter = styled.p`
     background: ${props => props.theme.colors.lightGrayishBlue};
-    width: 50px;
     text-align: center;
     font-weight: bold;
+    width: 100%;
     color: ${props => props.theme.colors.veryDarkBlue};
     padding: .8em 1em;
     user-select: none;
 
     @media screen and (min-width: 400px) {
         padding: 1em 1.4em;
+        width: 50px;
     }
 `
 export const Increment = styled.div`

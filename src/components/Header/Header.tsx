@@ -10,11 +10,11 @@ import avatar from "../../images/image-avatar.png";
 type HeaderProps = {
     openMenu: boolean;
     handleOpenMenu: (value: boolean) => void;
-    updateQuantity: (value: number) => void;
+    resetQuantity: () => void;
     quantity: number;
 }
 
-export const Header = ({updateQuantity, quantity, openMenu, handleOpenMenu}: HeaderProps) => {
+export const Header = ({resetQuantity, quantity, openMenu, handleOpenMenu}: HeaderProps) => {
 
     
     const [openCart, setOpenCart] = useState<boolean>(false);
@@ -37,7 +37,12 @@ export const Header = ({updateQuantity, quantity, openMenu, handleOpenMenu}: Hea
                 <ShoppingCart src={shoppingCart} $opencart={openCart} />
                 <ShoppingCartQuantity>{quantity}</ShoppingCartQuantity>
             </ShoppingCartWrapper>
-            <ShoppingCartCard openCart={openCart} quantity={quantity}/>
+            <ShoppingCartCard 
+                openCart={openCart}
+                toggleOpenCart={() => setOpenCart(!openCart)} 
+                quantity={quantity}
+                resetQuantity={resetQuantity}
+            />
             <AvatarImg src={avatar}/>
         </Nav>
     )

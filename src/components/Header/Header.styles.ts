@@ -44,7 +44,6 @@ type NavMenuProps = {
 
 export const NavMenu = styled.ul<NavMenuProps>`
     display: flex;
-    z-index: 10;
 
     @media screen and (max-width: 400px) {
         display: flex;
@@ -58,6 +57,7 @@ export const NavMenu = styled.ul<NavMenuProps>`
         padding-left: 1em;
         padding-top: 5em;
         width: 70vw;
+        z-index: 10;
     }
 
     }
