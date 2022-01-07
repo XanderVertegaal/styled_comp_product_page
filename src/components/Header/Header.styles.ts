@@ -67,12 +67,6 @@ export const NavItem = styled.li`
     list-style-type: none;
     font-weight: bold;
     margin-bottom: 1em;
-
-    &:hover {
-        cursor: pointer;
-        border-bottom: ${props => props.theme.colors.orange} 2px solid;
-        color: ${props => props.theme.colors.veryDarkBlue};
-    }
     
     @media screen and (min-width: 400px) {
         font-weight: normal;
@@ -80,6 +74,12 @@ export const NavItem = styled.li`
         color: ${props => props.theme.colors.grayishBlue};
         border-bottom: ${props => props.theme.colors.white} 2px solid;
         padding: 2rem 0;
+
+        &:hover {
+        cursor: pointer;
+        border-bottom: ${props => props.theme.colors.orange} 2px solid;
+        color: ${props => props.theme.colors.veryDarkBlue};
+    }
     }
 `
 

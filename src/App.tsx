@@ -7,6 +7,12 @@ import { useState } from "react";
 const App = () => {
 
   const [quantity, setQuantity] = useState<number>(0)
+  const [openMenu, setOpenMenu] = useState<boolean>(false);
+
+  const handleOpenMenu = (value: boolean) => {
+    setOpenMenu(!value)
+  }
+
 
   const updateQuantity = (value: number) => {
     setQuantity(value)
@@ -14,8 +20,8 @@ const App = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <Header updateQuantity={updateQuantity} quantity={quantity}/>
+      <GlobalStyle openMenu={openMenu}/>
+      <Header openMenu={openMenu} handleOpenMenu={handleOpenMenu} updateQuantity={updateQuantity} quantity={quantity}/>
       <Body updateQuantity={updateQuantity} />
     </ThemeProvider>
   );

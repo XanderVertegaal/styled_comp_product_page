@@ -8,18 +8,20 @@ import { useState } from 'react';
 import avatar from "../../images/image-avatar.png";
 
 type HeaderProps = {
+    openMenu: boolean;
+    handleOpenMenu: (value: boolean) => void;
     updateQuantity: (value: number) => void;
     quantity: number;
 }
 
-export const Header = ({updateQuantity, quantity}: HeaderProps) => {
+export const Header = ({updateQuantity, quantity, openMenu, handleOpenMenu}: HeaderProps) => {
 
-    const [openMenu, setOpenMenu] = useState<boolean>(false);
+    
     const [openCart, setOpenCart] = useState<boolean>(false);
 
     return (
         <Nav>
-            <MenuIconWrapper onClick={() => setOpenMenu(!openMenu)}>
+            <MenuIconWrapper onClick={() => handleOpenMenu(openMenu)}>
                 <MenuIcon src={openMenu ? MenuClose : MenuOpen} />
             </MenuIconWrapper>
             <Logo />  
