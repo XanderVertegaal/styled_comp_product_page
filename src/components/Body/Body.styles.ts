@@ -6,7 +6,7 @@ export const ShopItem = styled.article`
     flex-direction: column;
     margin-top: 4em;
 
-    @media screen and (min-width: 400px) {
+    @media screen and (min-width: 500px) {
         flex-direction: row;
         gap: 5em;
         margin: 5em auto;
@@ -19,7 +19,7 @@ export const ShopItem = styled.article`
 export const Picture = styled.section`
     position: relative;
 
-    @media screen and (min-width: 400px) {
+    @media screen and (min-width: 500px) {
         display: flex;
         flex-direction: column;
         margin-right: 2em;
@@ -30,7 +30,7 @@ export const Picture = styled.section`
 export const MainPicture = styled.img`
     width: 100%;
 
-    @media screen and (min-width: 400px) {
+    @media screen and (min-width: 500px) {
         border-radius: 5%
     }
 `
@@ -51,7 +51,7 @@ export const ButtonContainerLeft = styled.div`
         transform: translateY(2px);
     }
 
-    @media screen and (min-width: 400px) {
+    @media screen and (min-width: 500px) {
         display: none;
     }
 `
@@ -72,7 +72,7 @@ export const ButtonContainerRight = styled.div`
         transform: translateY(2px);
     }
 
-    @media screen and (min-width: 400px) {
+    @media screen and (min-width: 500px) {
         display: none;
     }
 
@@ -96,7 +96,7 @@ export const ButtonRight = styled(SVG)`
 export const Gallery = styled.div`
     display: none;
 
-    @media screen and (min-width: 400px) {
+    @media screen and (min-width: 500px) {
         display: flex;
         justify-content: space-between;
         margin: 2em 0;
@@ -151,7 +151,7 @@ export const Text = styled.section`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 
-    @media screen and (min-width: 400px) {
+    @media screen and (min-width: 500px) {
         width: 90vw;
         height: 70%;
     }
@@ -164,7 +164,7 @@ export const LeadTitle = styled.h3`
     letter-spacing: .05em;
     font-size: smaller;
 
-    @media screen and (min-width: 400px) {
+    @media screen and (min-width: 500px) {
         font-size: 16px;
         letter-spacing: 0;
     }
@@ -174,7 +174,7 @@ export const MainTitle = styled.h2`
     font-size: 28px;
     color: ${props => props.theme.colors.veryDarkBlue};
 
-    @media screen and (min-width: 400px) {
+    @media screen and (min-width: 500px) {
         font-size: 52px;
         letter-spacing: -.025em;
     }
@@ -187,7 +187,7 @@ export const Description = styled.p`
     font-size: 15px;
     padding: 1.25em 0;
 
-    @media screen and (min-width: 400px) {
+    @media screen and (min-width: 500px) {
         font-size: 16px;
     }
 `
@@ -199,7 +199,7 @@ export const NewPrice = styled.p`
     color: ${props => props.theme.colors.veryDarkBlue};
     user-select: none;
 
-    @media screen and (min-width: 400px) {
+    @media screen and (min-width: 500px) {
         justify-self: start;
     }
 `
@@ -215,9 +215,9 @@ export const Discount = styled.p`
     font-weight: bold;
     border-radius: 5px;
     user-select: none;
-    margin-left: .5em;
+    margin-left: 1em;
 
-    @media screen and (min-width: 400px) {
+    @media screen and (min-width: 500px) {
         grid-area: 4 / 2 / 5 / 4;
         font-size: 18px;
         padding: 5px 8px;
@@ -233,7 +233,7 @@ export const OldPrice = styled.p`
     justify-self: end;
     user-select: none;
 
-    @media screen and (min-width: 400px) {
+    @media screen and (min-width: 500px) {
         grid-area: 5 / 1 / 6 / 4;
         justify-self: start;
         padding: .75em 0 1.25em 0;
@@ -242,7 +242,7 @@ export const OldPrice = styled.p`
 export const Controls = styled.section`
     grid-area: 5 / 1 / 6 / 4;
 
-    @media screen and (min-width: 400px) {
+    @media screen and (min-width: 500px) {
         grid-area: 6 / 1 / 7 / 4;
         display: flex;
         align-items: center;
@@ -276,7 +276,7 @@ export const Decrement = styled.div`
         transform: translateY(2px);
     }
 
-    @media screen and (min-width: 400px) {
+    @media screen and (min-width: 500px) {
         padding: 1em 1.4em;
     }
 `
@@ -291,7 +291,7 @@ export const Counter = styled.p`
     padding: .8em 1em;
     user-select: none;
 
-    @media screen and (min-width: 400px) {
+    @media screen and (min-width: 500px) {
         padding: 1em 1.4em;
         width: 50px;
     }
@@ -315,7 +315,7 @@ export const Increment = styled.div`
         transform: translateY(2px);
     }
 
-    @media screen and (min-width: 400px) {
+    @media screen and (min-width: 500px) {
         padding: 1em 1.4em;
     }
 `
@@ -347,7 +347,7 @@ export const AddToCart = styled.button`
         transform: translateY(2px);
     }
 
-    @media screen and (min-width: 400px) {
+    @media screen and (min-width: 500px) {
         margin-left: 1em;
         margin-bottom: 0;
     }

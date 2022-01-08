@@ -14,7 +14,7 @@ export const Nav = styled.nav`
     background-color: ${props => props.theme.colors.white};
  
 
-    @media screen and (min-width: 400px) {
+    @media screen and (min-width: 500px) {
         position: relative;
         width: 80%;
         margin: 0 auto;
@@ -29,7 +29,7 @@ export const MenuIconWrapper = styled.div`
     width: 16px;
     z-index: 99;
 
-    @media screen and (min-width: 400px) {
+    @media screen and (min-width: 500px) {
         display: none;
     }
 `
@@ -48,7 +48,7 @@ type NavMenuProps = {
 export const NavMenu = styled.ul<NavMenuProps>`
     display: flex;
 
-    @media screen and (max-width: 400px) {
+    @media screen and (max-width: 500px) {
         display: flex;
         position: absolute;
         flex-direction: column;
@@ -71,7 +71,7 @@ export const NavItem = styled.li`
     font-weight: bold;
     margin-bottom: 1em;
     
-    @media screen and (min-width: 400px) {
+    @media screen and (min-width: 500px) {
         font-weight: normal;
         margin: 0 0 0 3.5rem;
         color: ${props => props.theme.colors.grayishBlue};
@@ -117,7 +117,7 @@ export const ShoppingCartWrapper = styled.div`
         cursor: pointer;
     }
 
-    @media screen and (min-width: 400px) {
+    @media screen and (min-width: 500px) {
         margin-right: 3rem;
     };
 
@@ -154,7 +154,7 @@ export const AvatarImg = styled.img`
         border-radius: 5em;
     }
 
-    @media screen and (min-width: 400px) {
+    @media screen and (min-width: 500px) {
         width: 45px;
         height: 45px;
         margin: 0px;

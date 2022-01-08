@@ -17,6 +17,7 @@ export const ShoppingCartCard = ({openCart, quantity, resetQuantity, toggleOpenC
             return <CardPlaceHolder>Your cart is empty.</CardPlaceHolder>
         } else {
             return (
+                <>
                 <CardProduct>
                     <CardImage src={Product1ThumbNail}/>
                     <CardText>
@@ -28,8 +29,9 @@ export const ShoppingCartCard = ({openCart, quantity, resetQuantity, toggleOpenC
                         </CardPrice>
                     </CardText>
                     <CardBin src={BinImage} onClick={resetQuantity}/>
-                    <CheckoutButton onClick={toggleOpenCart}>Checkout</CheckoutButton>
                 </CardProduct>
+                <CheckoutButton onClick={toggleOpenCart}>Checkout</CheckoutButton>
+                </>
             )
         }
     }

@@ -21,7 +21,7 @@ export const CardWrapper = styled.div<CardWrapperProps>`
     box-shadow: 0 5px 5px 0px grey;
     z-index: 2;
     
-    @media screen and (min-width: 400px) {
+    @media screen and (min-width: 500px) {
         width: 20vw;
         left: 70%;
         margin: 0;
@@ -38,15 +38,14 @@ export const CardPlaceHolder = styled.p`
     color: ${props => props.theme.colors.darkGrayishBlue};
     padding: 3rem;
 
-    @media screen and (min-width: 400px) {
+    @media screen and (min-width: 500px) {
         padding: 3em 0;
     }
 `
 
 export const CardProduct = styled.div`
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
     align-items: center;
 `
@@ -60,13 +59,14 @@ export const CardImage = styled.img`
 export const CardText = styled.div`
     display: flex;
     flex-direction: column;
+    flex-shrink: 1;
+    min-width: 0;
 
 `
 export const CardProductTitle = styled.p`
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    width: 200px;
 `
 
 export const CardPrice = styled.p`
@@ -74,6 +74,7 @@ export const CardPrice = styled.p`
 
 export const CardBin = styled(SVG)`
     margin: 0 1em;
+    flex-shrink: 0;
 `
 
 export const CheckoutButton = styled.button`
@@ -102,7 +103,7 @@ export const CheckoutButton = styled.button`
         transform: translateY(2px);
     }
 
-    @media screen and (min-width: 400px) {
+    @media screen and (min-width: 500px) {
         margin-left: 1em;
         margin-bottom: 0;
     }

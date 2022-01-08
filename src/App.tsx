@@ -19,6 +19,7 @@ const App = () => {
 
   const resetQuantity = () => {
     setQuantity(0)
+    setOpenMenu(false)
   }
 
   return (
