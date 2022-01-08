@@ -4,6 +4,7 @@ import SVG from 'react-inlinesvg'
 export const ShopItem = styled.article`
     display: flex;
     flex-direction: column;
+    margin-top: 4em;
 
     @media screen and (min-width: 400px) {
         flex-direction: row;

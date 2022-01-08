@@ -3,18 +3,21 @@ import SVG from "react-inlinesvg"
 
 
 export const Nav = styled.nav`
-    position: relative;
+    position: fixed;
+    top: 0;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     border-bottom: ${props => props.theme.colors.grayishBlue} 1px solid;
-    max-width: 100vw;
+    width: 100%;
+    z-index: 2;
+    background-color: ${props => props.theme.colors.white};
  
 
     @media screen and (min-width: 400px) {
+        position: relative;
         width: 80%;
         margin: 0 auto;
-
     }
 `
 
